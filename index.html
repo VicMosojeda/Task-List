@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<!-- font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Onest&display=swap" rel="stylesheet">
+
+	<!-- icon -->
+	<link rel="shortcut icon" href="./ico/tasklist.svg" type="image/x-icon">
+	
+	<title>Lista de Tareas</title>
+</head>
+<body class="light-theme">
+
+	<h1>Task List</h1>
+
+	<!-- Switch para theme -->
+	<button class="btn-switch">
+		<img class="ico-switcher" src="./ico/dark.svg" title="Dark">
+	</button>
+	
+	<!-- Lista de tareas -->
+	<div class="app-container" id="app">
+		<input type="text" class="task_text" id="taskInput" placeholder="Agregar una nueva tarea" maxlength="40">
+		<button class="btn-add" id="addTask">Agregar Tarea</button>
+		<ul class="ul-ls" id="taskList">  </ul>
+	</div>
+
+	<!-- Ventan Emergente -->
+	<div id="popup" class="popup">
+		<div class="popup-content">
+			<span class="popup-close" id="popup-close"></span>
+			<p id="popup-message"></p>
+		</div>
+	</div>
+
+	<script type="module" src="./app.js"></script>
+</body>
+</html>

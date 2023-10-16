@@ -1,0 +1,268 @@
+* {
+	padding: 0%;
+	margin: 0%;
+	box-sizing: border-box;
+	font-family: 'Onest', sans-serif;
+}
+/*global colors*/
+:root {
+	--white-color: #fff;
+	--white2-color: #ffffff20;
+	--black-color: #000;
+	--black2-color: #00000020;
+	--grey-color: #444;
+	--grey2-color: #44444430;
+	--red-color: #990000;
+	--red2-color: #99000050;
+	--green-color: #009900;
+	--green2-color: #00990090;
+	--blue-color: #000099;
+	--filterBlur: blur(5px);
+}
+
+/*theme light*/
+.light-theme {
+	--bg: var(--white-color);
+	--fontColor: var(--black-color);
+	--bTransparent: var(--black2-color);
+	--btnBg: var(--black-color);
+	--btnFontColor: var(--white-color);
+	--borderColor: var(--grey2-color);
+	--boxShadow: var(--black-color);
+	transition: .3s ease-in-out;
+}
+
+/*theme dark*/
+.dark-theme {
+	--bg: var(--black-color);
+	--fontColor: var(--white-color);
+	--bTransparent: var(--white2-color);
+	--btnBg: var(--white-color);
+	--btnFontColor: var(--black-color);
+	--borderColor: var(--white2-color);
+	--boxShadow: var(--grey-color);
+	transition: .3s ease-in-out;
+}
+
+/*style body*/
+body {
+	background: var(--bg);
+	color: var(--fontColor);
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+/*style scrollbar*/
+
+body::-webkit-scrollbar 
+{
+	display: none;
+}
+
+/*style title*/
+
+h1 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	backdrop-filter: blur(2px);
+	box-shadow: 0 0 5px 1px var(--boxShadow);
+}
+
+/*switch theme color*/
+.btn-switch {
+	position: fixed;
+	top: 20px;
+	right: 100px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	color: var(--btnFontColor);
+	background: var(--btnBg);
+	transition: .3s ease-in-out;
+	box-shadow: 0 0 5px 1px var(--boxShadow);
+}
+
+.btn-switch:hover {
+	box-shadow: 0 0 10px 5px var(--boxShadow);
+}
+
+
+.btn-switch img {
+	width: 30px;
+}
+
+/*style de div-app*/
+.app-container {
+	padding: 50px;
+	margin: 100px 0;
+	text-align: center;
+}
+
+/*style de title*/
+.app-container h1 {
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+/*style input text & effects*/
+.task_text {
+	width: 100%;
+	padding: 15px 20px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	text-align: center;
+	background: transparent;
+	color: var(--fontColor);
+	border: 2px solid var(--borderColor);
+}
+
+.task_text:hover {
+	background: var(--grey2-color);
+}
+
+.task_text:focus {
+	box-shadow: 0 5px 10px 1px var(--boxShadow);
+}
+
+
+/*style del boton*/
+.btn-add {
+	background: var(--bg);
+	color: var(--fontColor);
+	margin-top: 30px;
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	border: 2px solid var(--borderColor);
+	transition: .3s ease-in-out;
+}
+
+.btn-add:hover {
+	background: var(--grey2-color);
+}
+
+/*.btn-add:focus {
+	box-shadow: 0 5px 10px 1px var(--boxShadow);
+}*/
+
+/*style de lista*/
+
+li {
+	display: flex;
+	padding: 10px;
+	margin: 0 0 20px 0;
+	align-items: center;
+	border-radius: 10px;
+	border: 2px solid var(--borderColor);
+}
+
+li:hover {
+	background: var(--grey2-color);
+	box-shadow: 0 5px 10px 1px var(--boxShadow);
+}
+
+/*style ul*/
+.ul-ls {
+	list-style: none;
+	margin: 30px 0;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+/*style checkbox*/
+input[type="checkbox"] {
+	appearance: none;
+	width: 40px;
+	height: 30px;
+	border-radius: 50%;
+	background: transparent;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	border: 2px solid var(--borderColor);
+}
+
+input[type="checkbox"]::before {
+	content: "";
+	color: var(--green-color);
+	transition: opacity .2s ease;
+}
+
+input[type="checkbox"]:checked::before {
+/*	background: var(--green2-color);*/
+	opacity: 0;
+}
+
+input[type="checkbox"]:checked::after {
+	position: absolute;
+	content: "✔";
+	margin: 0 5px 10px 5px;
+	color: var(--green-color);
+	font-size: 2.5rem;
+}
+
+/*style span*/
+span {
+	padding: 0 20px;
+	width: 100%;
+}
+
+/* style button delete */
+.delete {
+	background: transparent;
+	color: var(--grey-color);
+	padding: 5px;
+	border-radius: 5px;
+	border: 2px solid var(--borderColor);
+}
+
+.delete:hover {
+	background: var(--red-color);
+	color: var(--white-color);
+}
+
+
+/*style popup(floating window)*/
+.popup {
+	display: none;
+	position: fixed;
+	background: var(--bTransparent);
+	backdrop-filter: blur(3px);
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+}
+
+.popup-content {
+	background: var(--bg);
+	padding: 50px;
+	border-radius: 10px;
+	position: relative;
+	box-shadow: 0 0 20px 1px var(--boxShadow);
+}
+
+.popup-close::before {
+	content: "X";
+	position: absolute;
+	top: 10px;
+	left: 220px;
+	cursor: pointer;
+	color: var(--btnBg);
+	font-weight: bold;
+}
+
+.popup-close:hover::before {
+	color: var(--red-color);
+}
